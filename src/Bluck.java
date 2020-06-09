@@ -17,6 +17,7 @@ public class Bluck{
 
         AMInfo info = new AMInfo(curtask, null);
 
+        Integer Counter = 0;
         int N = 200;
         int n = text.length() / N;
         int M = pattern.length();
@@ -61,6 +62,7 @@ public class Bluck{
 
             Result result = (Result) (c.readObject());
             List<Integer> ins = result.getRes();
+            Counter += ins.size();
             if (ins.size() > 0) {
                 System.out.println("Pattern ins : {");
                 for (int index : ins) {
@@ -72,6 +74,8 @@ public class Bluck{
 
 
         curtask.end();
+        
+        System.out.println("Total count: " + Counter);
     }
     public static String textFromFile(String filename) throws Exception {
 
