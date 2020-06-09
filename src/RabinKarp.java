@@ -7,6 +7,8 @@ public class RabinKarp implements AM {
     public final static int d = 256;
 
     public Result search(String text, String pattern) {
+                Result result = new Result();
+        
                 int q = 101;
                 int M = pattern.length();
                 int N = text.length();
@@ -35,7 +37,8 @@ public class RabinKarp implements AM {
 
 
                         if (j == M)
-                            System.out.println("Pattern found at index " + i);
+                            result.addIndex(i);
+                            //System.out.println("Pattern found at index " + i);
                     }
 
                     if (i < N - M) {
@@ -45,7 +48,8 @@ public class RabinKarp implements AM {
                             t = (t + q);
                     }
                 }
-        }
+        return result;
+    }
     
 
     public void run(AMInfo info) {
