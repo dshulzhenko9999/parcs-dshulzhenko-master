@@ -46,7 +46,7 @@ public class RabinKarp implements AM {
                     }
                 }
         }
-    }
+    
 
     public void run(AMInfo info) {
         Input input = (Input) info.parent.readObject();
